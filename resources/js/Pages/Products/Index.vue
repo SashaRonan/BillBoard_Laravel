@@ -38,5 +38,7 @@ const clicked = function (event) {
 </template>
 
 <style scoped>
-
+.record {
+    margin-top: -10px;
+}
 </style>
