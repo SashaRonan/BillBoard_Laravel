@@ -32,4 +32,6 @@ Route::get('/dashboard', function () {
 
 Route::resource('/products', 'ProductController');
 
+//Route::get('/my_product', 'ProductController@showMyProduct')->name('product.showMyProduct');
+
 require __DIR__.'/auth.php';

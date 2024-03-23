@@ -24,7 +24,6 @@ const show_hide_phone = function (numID) { // TODO: Реализовать ск�
     }
 }
 
-
 </script>
 
 <template>
@@ -36,7 +35,6 @@ const show_hide_phone = function (numID) { // TODO: Реализовать ск�
                     <img class="upload_img_file" :src="data.img">
                 </div>
                 <button :id="'buttonID_' + data.id" class="product_button" @click="show_hide_phone(data.id)">Показать телефон</button>
-<!--               onclick="app.ProductList.show_hide_phone()-->
                 <p :id="'userPhone_' + data.id" class="user_phone_class">{{ data.phone }}</p>
             </div>
 
@@ -51,8 +49,6 @@ const show_hide_phone = function (numID) { // TODO: Реализовать ск�
             <div class="product_price">{{ data.price }} р.</div>
         </div>
     </div>
-
-
 
 </template>
 
@@ -73,7 +69,7 @@ const show_hide_phone = function (numID) { // TODO: Реализовать ск�
 
 .product_block {
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     min-height: 200px;
     width: 95%;
     justify-content: space-between;

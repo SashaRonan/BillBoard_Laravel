@@ -4,28 +4,6 @@ import {Head} from "@inertiajs/inertia-vue3";
 import Product from '@/Components/Products/Product.vue';
 import {ref} from 'vue';
 
-// export default {
-//     props: {
-//         type: Object,
-//         required: true
-//     },
-//
-//     components: {
-//         BreezeAuthenticatedLayout,
-//         Product
-//     },
-//
-//     setup(props) {
-//         const title = ref('Заголовок');
-//
-//         return {
-//             clicked: function (event) {
-//                 let parent = event.target.closest('.record');
-//                 title.value = 'Новый заголовок: ' + parent.dataset.id;
-//             }
-//         }
-//     }
-// }
 
 const props = defineProps({
     productsData: Object,
