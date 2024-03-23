@@ -34,7 +34,6 @@ const clicked = function (event) {
             <Product :data="product" @click="clicked"></Product>
         </div>
 
-
     </BreezeAuthenticatedLayout>
 </template>
 

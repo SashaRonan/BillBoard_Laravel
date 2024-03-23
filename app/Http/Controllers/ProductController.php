@@ -57,18 +57,22 @@ class ProductController extends Controller
      * @param \App\Models\Product $product
      * @return Response
      */
-    public function show(User $user)
+    public function show($userID)
     {
+//       $userID = auth()->id();
 
+        $sql = '
+        SELECT products.id, products.product_name, products.description, products.price, products.img, products.user_id, users.name, users.phone
+        FROM `products` INNER JOIN `users`
+        ON products.user_id = users.id
+        WHERE users.id = ' . $userID;
 
-        $userID = auth()->id();
+//        $products = DB::select($sql);
+//
+//        dd($products);
 
         return Inertia::render("Products/Show", [
-                'myProducts' => DB::table('products')
-                    ->select('products.id', 'products.product_name', 'products.description', 'products.price', 'products.img', 'products.user_id', 'users.name', 'users.phone')
-                    ->leftJoin('users', 'products.user_id', '=', 'users.id')
-                    ->where('products.user_id', $userID)
-                    ->get()],
+                'productsData' => DB::select($sql)],
         );
     }
 

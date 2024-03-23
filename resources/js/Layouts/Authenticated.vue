@@ -9,18 +9,6 @@ import {Link} from '@inertiajs/inertia-vue3';
 
 const showingNavigationDropdown = ref(false);
 
-// const userId = ref(props.auth.user.id)
-
-// export default {
-//     props: ['app'],
-//     data()
-//     {
-//         return{
-//             user_id: this.props.auth.user.id,
-//         }
-//     },
-// }
-
 </script>
 
 <template>
@@ -51,12 +39,11 @@ const showingNavigationDropdown = ref(false);
                                 </BreezeNavLink>
                             </div>
 
-<!--                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">-->
-<!--                                <BreezeNavLink :href="route('product.show')"-->
-<!--                                               :active="route().current('product.show', 3)">-->
-<!--                                    Мои товары-->
-<!--                                </BreezeNavLink>-->
-<!--                            </div>-->
+                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                                <BreezeNavLink :href="route('product.show', 5)"><!--  TODO: Необходимо получать ID авторизованного пользователя и передавать в product.show -->
+                                    Мои товары
+                                </BreezeNavLink>
+                            </div>
 
                         </div>
 
@@ -123,12 +110,13 @@ const showingNavigationDropdown = ref(false);
                         </BreezeResponsiveNavLink>
                     </div>
 
-<!--                    <div class="pt-2 pb-3 space-y-1">-->
-<!--                        <BreezeResponsiveNavLink :href="route('product.show')"-->
-<!--                                                 :active="route().current('product.show', 3)">-->
-<!--                            Мои товары-->
-<!--                        </BreezeResponsiveNavLink>-->
-<!--                    </div>-->
+                    <div class="pt-2 pb-3 space-y-1">
+                        <BreezeResponsiveNavLink :href="route('product.show', 5)"> <!-- TODO: Необходимо получать ID
+                            авторизованного пользователя и передавать в product.show -->
+                            <!--                                               :active="route().current('product.show', 6)"> -->
+                            Мои товары
+                        </BreezeResponsiveNavLink>
+                    </div>
 
                     <!-- Responsive Settings Options -->
                     <div class="pt-4 pb-1 border-t border-gray-200">
