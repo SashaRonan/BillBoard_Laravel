@@ -4,6 +4,7 @@ defineProps({
     data: Object,
 })
 
+
 const show_hide_phone = function (numID) { // TODO: Реализовать скрытие телефона при повторном нажатии.
     const buttonID = '#buttonID_' + numID;
     const userPhoneID = '#userPhone_' + numID;

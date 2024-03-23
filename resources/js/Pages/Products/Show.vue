@@ -1,6 +1,7 @@
 <script setup>
 
 import BreezeAuthenticatedLayout from '@/Layouts/Authenticated.vue';
+import {Link} from '@inertiajs/inertia-vue3';
 import {Head} from "@inertiajs/inertia-vue3";
 import Product from '@/Components/Products/Product.vue';
 import {ref} from 'vue';
@@ -30,9 +31,9 @@ const clicked = function (event) {
             {{ title }}
         </div>
 
-        <div class="content_add_button">
+       <div class="content_add_button">  <!-- TODO:: Вынести кнопку в отдельный компонент-->
             <div class="button_add-box">
-                <button class="product_button_add" onclick="clickFunction()">
+                <Link class="product_button_add" :href="route('product.create')">
                     <div class="product_button_plus">
                         <svg width="800px" height="800px" viewBox="0 0 48 48" fill="none">
                             <rect width="48" height="48" fill="white" fill-opacity="0.01"></rect>
@@ -40,7 +41,7 @@ const clicked = function (event) {
                         </svg>
                     </div>
                     <div class="product_button_text">Добавить</div>
-                </button>
+                </Link>
             </div>
         </div>
 

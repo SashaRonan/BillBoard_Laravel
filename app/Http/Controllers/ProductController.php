@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\User;
-//use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
@@ -31,24 +31,32 @@ class ProductController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
 
 
     public function create()
     {
-        //
+        return Inertia::render('Products/Create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        dd('1111');
+        $data = request()->validate([
+            'product_name' => 'required|string',
+            'description' => 'required|string',
+            'price' => 'required|string',
+        ]);
+
+        dd($data);
+        Product::create($data);
     }
 
     /**
@@ -67,12 +75,8 @@ class ProductController extends Controller
         ON products.user_id = users.id
         WHERE users.id = ' . $userID;
 
-//        $products = DB::select($sql);
-//
-//        dd($products);
-
         return Inertia::render("Products/Show", [
-                'productsData' => DB::select($sql)],
+            'productsData' => DB::select($sql)],
         );
     }
 
@@ -90,7 +94,7 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param Request $request
      * @param \App\Models\Product $product
      * @return \Illuminate\Http\Response
      */
