@@ -19,7 +19,6 @@ class ProductController extends Controller
      */
     public function index()
     {
-
         return Inertia::render("Products/Index", [
             'productsData' => DB::table('products as p')
                 ->select('p.id', 'p.product_name', 'p.description', 'p.price', 'p.img', 'u.name', 'u.phone')
@@ -48,7 +47,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        dd('1111');
+
         $data = request()->validate([
             'product_name' => 'required|string',
             'description' => 'required|string',
@@ -112,5 +111,10 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         //
+    }
+
+    public function id()
+    {
+        return '111111111';
     }
 }

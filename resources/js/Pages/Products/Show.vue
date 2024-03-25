@@ -68,7 +68,7 @@ const clicked = function (event) {
 .button_add-box {
     width: 100%;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 
 }
 

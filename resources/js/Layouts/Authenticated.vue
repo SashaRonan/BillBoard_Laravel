@@ -1,5 +1,5 @@
 <script setup>
-import {ref} from 'vue';
+import {onMounted, ref} from 'vue';
 import BreezeApplicationLogo from '@/Components/ApplicationLogo.vue';
 import BreezeDropdown from '@/Components/Dropdown.vue';
 import BreezeDropdownLink from '@/Components/DropdownLink.vue';
@@ -8,6 +8,30 @@ import BreezeResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 import {Link} from '@inertiajs/inertia-vue3';
 
 const showingNavigationDropdown = ref(false);
+
+
+// Define the component setup
+const userID = ref(null);
+
+// Fetch the authenticated user ID when the component is mounted
+onMounted(() => {
+    getAuthUserID();
+});
+
+// Method to get the authenticated user ID
+const getAuthUserID = () => {
+
+    axios.get('/products/id')
+        .then(res => {
+            console.log(res.data);
+            // userID.value = res.data; // Update the userID value
+        })
+        .catch(error => {
+            console.error(error);
+        });
+};
+
+
 
 </script>
 
@@ -40,7 +64,8 @@ const showingNavigationDropdown = ref(false);
                             </div>
 
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <BreezeNavLink :href="route('product.show', 5)"><!--  TODO: Необходимо получать ID авторизованного пользователя и передавать в product.show -->
+                                <BreezeNavLink :href="route('product.show', 5)">
+                                    <!--  TODO: Необходимо получать ID авторизованного пользователя и передавать в product.show -->
                                     Мои товары
                                 </BreezeNavLink>
                             </div>

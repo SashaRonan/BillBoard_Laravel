@@ -2,15 +2,16 @@
 import BreezeAuthenticatedLayout from '@/Layouts/Authenticated.vue';
 import {Head} from "@inertiajs/inertia-vue3";
 import route from "../../../../vendor/tightenco/ziggy";
+import axios from 'axios';
 
- const loadPreviewAdd = function (event) { // TODO: Исправить загрузку превьюшшки
-    let output = document.getElementById('imgPreview');
-    output.src = URL.createObjectURL(event.target.files[0]);
-    output.onload = function () {
-        URL.revokeObjectURL(output.src) // очистка
-    }
-    return output.onload;
-}
+//  const loadPreviewAdd = function (event) { // TODO: Исправить загрузку превьюшшки
+//     let output = document.getElementById('imgPreview');
+//     output.src = URL.createObjectURL(event.target.files[0]);
+//     output.onload = function () {
+//         URL.revokeObjectURL(output.src) // очистка
+//     }
+//     return output.onload;
+// }
 
 export default {
 
@@ -20,19 +21,26 @@ export default {
         Head
     },
 
-    data() {
-        return {
-            product_name: '',
-            description: '',
-            price: '',
-        }
-    },
+    // data() {
+    //     return {
+    //         product_name: '',
+    //         description: '',
+    //         price: '',
+    //     }
+    // },
+
+
+
+
     methods: {
-        route,
-        submit() {
-            this.$emit('submit', this.product_name)
-            this.$emit('submit', this.description)
-            this.$emit('submit', this.price)
+        submitForm() {
+            axios.post(route('product.store'), formData)
+                .then(response => {
+                    console.log(response.data);
+                })
+                .catch(error => {
+                    console.error(error);
+                });
         }
 
     }
@@ -50,7 +58,8 @@ export default {
             </h2>
         </template>
 
-        <form class="content_add-ads" method="get" action="{{route('product.store')}}">
+        <form class="content_add-ads" @submit="submitForm" >
+<!--            TODO: Изучить отправку данных во Vue-->
 <!--            @csrf-->
 <!--            <input type="hidden" name="_token" :value="$store.state.csrfToken">-->
             <div class="login_block_add">
@@ -82,7 +91,7 @@ export default {
                     </label>
                 </div>
 
-                <button class="product_button upload_save_button" @click="submit" >Сохранить</button>
+                <button class="product_button upload_save_button" type="submit" >Сохранить</button>
             </div>
         </form>
 
@@ -104,10 +113,6 @@ export default {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-}
-
-.login_block_add {
-    margin-top: 114px;
 }
 
 .input_ads_block {
@@ -195,6 +200,7 @@ export default {
     border: 1px solid #284459;
     background: #284459;
     margin-top: 15px;
+    margin-bottom: 50px;
     border-radius: 10px;
     cursor: pointer;
 }
