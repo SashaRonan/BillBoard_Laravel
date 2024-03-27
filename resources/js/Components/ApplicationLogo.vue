@@ -7,31 +7,5 @@
 
 </template>
 
-<style scoped>
 
-.header_logo {
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    cursor: pointer;
-}
-
-.header_logo_img {
-    width: 55px;
-}
-
-.header_link {
-    font-family: "Anebock", sans-serif;
-    font-size: 30px;
-    color: #274358;
-    margin-left: 5px;
-}
-
-@font-face {
-    font-family: "Anebock";
-    src: url("../../../public/fonts/anebock.ttf");
-}
-
-</style>
 

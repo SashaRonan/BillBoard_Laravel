@@ -21,20 +21,26 @@ export default {
         Head
     },
 
-    // data() {
-    //     return {
-    //         product_name: '',
-    //         description: '',
-    //         price: '',
-    //     }
-    // },
+    data() {
+        return {
+            product_name: null,
+            description: null,
+            price: null,
+        }
+    },
 
 
 
 
     methods: {
-        submitForm() {
-            axios.post(route('product.store'), formData)
+        addProduct() {
+            // console.log(this.product_name, this.description, this.price)
+
+            axios.post('/products', {
+                product_name: this.product_name,
+                description:this.description,
+                price: this.price
+            })
                 .then(response => {
                     console.log(response.data);
                 })
@@ -81,7 +87,7 @@ export default {
                 <div class="upload_img-box">
                     <div class="product-box_add">
                         <div class="product_img">
-                            <img id="imgPreview" class="upload_img_file_add" src="img/logo/loadImg.png">
+                            <img id="imgPreview" class="upload_img_file_add" src="../../../../public/images/loadImg.png">
                         </div>
                     </div>
 
@@ -91,7 +97,7 @@ export default {
                     </label>
                 </div>
 
-                <button class="product_button upload_save_button" type="submit" >Сохранить</button>
+                <button @click.prevent="addProduct" class="product_button upload_save_button" type="submit" >Сохранить</button>
             </div>
         </form>
 

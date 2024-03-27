@@ -6,6 +6,7 @@ use App\Models\Product;
 use App\Models\User;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -43,19 +44,21 @@ class ProductController extends Controller
      * Store a newly created resource in storage.
      *
      * @param Request $request
-     * @return \Illuminate\Http\Response
+     * @return array
      */
     public function store(Request $request)
     {
 
-        $data = request()->validate([
+        $data  = request()->validate([
             'product_name' => 'required|string',
             'description' => 'required|string',
-            'price' => 'required|string',
+            'price' => 'required|integer',
+            'user_id' => Auth::id(),
         ]);
 
-        dd($data);
-        Product::create($data);
+        $product = Product::create($data);
+
+        return $product;
     }
 
     /**
@@ -74,6 +77,7 @@ class ProductController extends Controller
         ON products.user_id = users.id
         WHERE users.id = ' . $userID;
 
+//        dd(DB::select($sql));
         return Inertia::render("Products/Show", [
             'productsData' => DB::select($sql)],
         );

@@ -56,4 +56,9 @@ class AuthenticatedSessionController extends Controller
 
         return redirect('/');
     }
+//
+//    public function getUserId(): int
+//    {
+//        return Auth::id();
+//    }
 }

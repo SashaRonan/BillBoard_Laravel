@@ -1,12 +1,7 @@
-<script setup>
-import BreezeApplicationLogo from '@/Components/ApplicationLogo.vue';
-import { Link } from '@inertiajs/inertia-vue3';
-</script>
+<script setup></script>
 
 <template>
     <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0">
-
-
         <div>
             <slot />
         </div>

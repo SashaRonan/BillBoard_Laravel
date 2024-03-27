@@ -19,6 +19,11 @@ const clicked = function (event) {
 
 <template>
     <Head title="Список товаров"/>
+
+    <body>
+
+
+
     <BreezeAuthenticatedLayout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -35,6 +40,8 @@ const clicked = function (event) {
         </div>
 
     </BreezeAuthenticatedLayout>
+
+    </body>
 </template>
 
 <style scoped>
