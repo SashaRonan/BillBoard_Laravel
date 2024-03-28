@@ -32,14 +32,9 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-//
-//Route::get('user', 'UserController@getID');
-// routes/web.php
-
-;
 
 Route::resource('/products', 'ProductController');
-Route::get('/products/id', 'ProductController@id');
+//Route::get('/products/id', 'ProductController@id');
 
 //Route::get('/my_product', 'ProductController@showMyProduct')->name('products.showMyProduct');
 

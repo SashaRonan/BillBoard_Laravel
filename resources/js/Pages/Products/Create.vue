@@ -26,10 +26,9 @@ export default {
             product_name: null,
             description: null,
             price: null,
+            user_id: null
         }
     },
-
-
 
 
     methods: {
@@ -38,12 +37,19 @@ export default {
 
             axios.post('/products', {
                 product_name: this.product_name,
-                description:this.description,
+                description: this.description,
                 price: this.price
             })
-                .then(response => {
-                    console.log(response.data);
-                })
+                // .then(response => {
+                //     let user_id;
+                //     user_id = response.data.user_id
+                //     console.log(user_id);
+                //     // this.product_name = null
+                //     // this.description = null
+                //     // this.price = null
+                //     // alert('Вы добавили новый товар')
+                // })
+
                 .catch(error => {
                     console.error(error);
                 });
@@ -64,30 +70,34 @@ export default {
             </h2>
         </template>
 
-        <form class="content_add-ads" @submit="submitForm" >
-<!--            TODO: Изучить отправку данных во Vue-->
-<!--            @csrf-->
-<!--            <input type="hidden" name="_token" :value="$store.state.csrfToken">-->
+        <form class="content_add-ads" >
+            <!--            TODO: Изучить отправку данных во Vue-->
+            <!--            @csrf-->
+            <!--            <input type="hidden" name="_token" :value="$store.state.csrfToken">-->
             <div class="login_block_add">
                 <div class="input_ads_block">
                     <label for="product_name" class="input_ads_label">Название</label>
-                    <input id="product_name" v-model="product_name" class="input_ads" type="text" name="product_name" placeholder="Введите название вашего товара">
+                    <input id="product_name" v-model="product_name" class="input_ads" type="text" name="product_name"
+                           placeholder="Введите название вашего товара">
                 </div>
 
                 <div class="input_ads_block">
                     <label for="product_description" class="input_ads_label">Описание</label>
-                    <textarea id="product_description" v-model="description" class="input_ads_description" rows="10" cols="50" placeholder="Введите описание вашего товара"></textarea>
+                    <textarea id="product_description" v-model="description" class="input_ads_description" rows="10"
+                              cols="50" placeholder="Введите описание вашего товара"></textarea>
                 </div>
 
                 <div class="input_ads_block">
                     <label for="product_price" class="input_ads_label">Цена</label>
-                    <input id="product_price" v-model="price" class="input_ads" type="number" placeholder="Введите цену вашего товара">
+                    <input id="product_price" v-model="price" class="input_ads" type="number"
+                           placeholder="Введите цену вашего товара">
                 </div>
 
                 <div class="upload_img-box">
                     <div class="product-box_add">
                         <div class="product_img">
-                            <img id="imgPreview" class="upload_img_file_add" src="../../../../public/images/loadImg.png">
+                            <img id="imgPreview" class="upload_img_file_add"
+                                 src="../../../../public/images/loadImg.png">
                         </div>
                     </div>
 
@@ -97,14 +107,11 @@ export default {
                     </label>
                 </div>
 
-                <button @click.prevent="addProduct" class="product_button upload_save_button" type="submit" >Сохранить</button>
+                <button @click.prevent="addProduct" class="product_button upload_save_button">Сохранить</button>
             </div>
         </form>
 
     </BreezeAuthenticatedLayout>
-
-
-
 
 
 </template>

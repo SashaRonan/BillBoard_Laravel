@@ -44,21 +44,23 @@ class ProductController extends Controller
      * Store a newly created resource in storage.
      *
      * @param Request $request
-     * @return array
+     * @return Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function store(Request $request)
     {
 
-        $data  = request()->validate([
+        $data = request()->validate([
             'product_name' => 'required|string',
             'description' => 'required|string',
             'price' => 'required|integer',
-            'user_id' => Auth::id(),
-        ]);
 
+        ]);
+        $data['user_id'] = auth()->id();
         $product = Product::create($data);
 
-        return $product;
+        return redirect()->route('products.show', $data['user_id']); // TODO: Исправить перенаправление (не срабатывает)
+//        return ($product);
+
     }
 
     /**

@@ -167,7 +167,7 @@ const getAuthUserID = () => {
                     </div>
 
                     <div class="pt-2 pb-3 space-y-1">
-                        <BreezeResponsiveNavLink :href="route('products.show', 5)"> <!-- TODO: Необходимо получать ID
+                        <BreezeResponsiveNavLink :href="route('products.show', 5)"> <!-- TODO: Необходимо получать ID авторизованного пользователя
                             авторизованного пользователя и передавать в products.show -->
                             <!--                                               :active="route().current('products.show', 6)"> -->
                             Мои товары

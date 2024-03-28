@@ -55,8 +55,6 @@ const show_hide_phone = function (numID) { // TODO: Реализовать ск�
 
 <style scoped>
 
-
-
 .content_product {
     max-width: 800px;
     position: relative;

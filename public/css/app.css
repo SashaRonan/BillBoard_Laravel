@@ -1246,6 +1246,12 @@ select {
 .ease-out {
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
+/*TODO: Оптимизировать, убрать ненужные свойства и классы*/
+/*TODO: Собрать адаптив*/
+/*TODO: Выровнять кнопку "Добавить"*/
+/*TODO: Криво работает выпадающая менюшка LogOut/*/
+/*TODO: Собрать бургер*/
+/*TODO: Убрать огромный отступ сверху в LayOut/*/
 
 
 body {
@@ -1437,16 +1443,16 @@ body {
     margin: 0 auto;
 }
 
-.content_add_button {
-    position: relative;
-    top: 40px;
-    padding-bottom: 20px;
-    max-width: 800px;
-    padding-right: 16px;
-    padding-left: 16px;
-    margin: 0 auto;
-    display: flex;
-}
+/*.content_add_button {*/
+/*    position: relative;*/
+/*    top: 40px;*/
+/*    padding-bottom: 20px;*/
+/*    max-width: 800px;*/
+/*    padding-right: 16px;*/
+/*    padding-left: 16px;*/
+/*    margin: 0 auto;*/
+/*    display: flex;*/
+/*}*/
 
 .content_text {
     color: #284459;
@@ -1751,12 +1757,11 @@ body {
 }
 
 
-.button_add-box {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    margin: 50px 0 0 0;
-}
+/*.button_add-box {*/
+/*    width: 100%;*/
+/*    display: flex;*/
+/*    justify-content: flex-end;*/
+/*}*/
 
 .product_right_block {
     width: 100%;

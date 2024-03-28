@@ -7,6 +7,7 @@ import { Head } from '@inertiajs/inertia-vue3';
     <Head title="Dashboard" />
 
     <BreezeAuthenticatedLayout>
+<!--         TODO: Сделать красивую страничку приветствия-->
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Dashboard

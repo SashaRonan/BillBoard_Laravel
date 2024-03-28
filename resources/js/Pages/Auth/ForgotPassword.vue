@@ -4,7 +4,8 @@ import BreezeGuestLayout from '@/Layouts/Guest.vue';
 import BreezeInput from '@/Components/Input.vue';
 import BreezeLabel from '@/Components/Label.vue';
 import BreezeValidationErrors from '@/Components/ValidationErrors.vue';
-import {Head, useForm} from '@inertiajs/inertia-vue3';
+import {Head, Link, useForm} from '@inertiajs/inertia-vue3';
+import BreezeApplicationLogo from "@/Components/ApplicationLogo.vue";
 
 defineProps({
     status: String,
@@ -24,6 +25,12 @@ const submit = () => {
         <div class="login_block">
             <Head title="Forgot Password"/>
 
+            <div class="mb-4">
+                <Link href="/">
+                    <BreezeApplicationLogo/>
+                </Link>
+            </div>
+
             <div class="mb-4 text-sm text-gray-600">
                 Забыли свой пароль? Без проблем. Просто сообщите нам свой адрес электронной почты, и мы вышлем вам по
                 электронной почте ссылку для сброса пароля, которая позволит вам выбрать новый.
@@ -36,6 +43,7 @@ const submit = () => {
             <BreezeValidationErrors class="mb-4"/>
 
             <form @submit.prevent="submit">
+
                 <div>
                     <BreezeLabel for="email" value="Email"/>
                     <BreezeInput id="email" type="email" class="mt-1 block w-full" v-model="form.email" required

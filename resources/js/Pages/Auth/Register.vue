@@ -5,6 +5,7 @@ import BreezeInput from '@/Components/Input.vue';
 import BreezeLabel from '@/Components/Label.vue';
 import BreezeValidationErrors from '@/Components/ValidationErrors.vue';
 import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
+import BreezeApplicationLogo from "@/Components/ApplicationLogo.vue";
 
 const form = useForm({
     name: '',
@@ -28,7 +29,17 @@ const submit = () => {
 
         <BreezeValidationErrors class="mb-4" />
 
+
+
+
         <form @submit.prevent="submit" class="login_block">
+
+            <div class="mb-4">
+                <Link href="/">
+                    <BreezeApplicationLogo/>
+                </Link>
+            </div>
+
             <div>
                 <BreezeLabel for="name" value="Имя" />
                 <BreezeInput id="name" type="text" class="mt-1 block w-full" v-model="form.name" required autofocus autocomplete="name" />

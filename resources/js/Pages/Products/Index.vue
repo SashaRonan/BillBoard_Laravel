@@ -31,13 +31,13 @@ const clicked = function (event) {
             </h2>
         </template>
 
-        <div>
+        <template>
             {{ title }}
-        </div>
+        </template>
 
-        <div v-for="product in productsData" :key="product.id" :data-id="product.id" class="record">
+        <template v-for="product in productsData" :key="product.id" :data-id="product.id" class="record">
             <Product :data="product" @click="clicked"></Product>
-        </div>
+        </template>
 
     </BreezeAuthenticatedLayout>
 

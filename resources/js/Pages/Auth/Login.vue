@@ -6,6 +6,7 @@ import BreezeInput from '@/Components/Input.vue';
 import BreezeLabel from '@/Components/Label.vue';
 import BreezeValidationErrors from '@/Components/ValidationErrors.vue';
 import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
+import BreezeApplicationLogo from "@/Components/ApplicationLogo.vue";
 
 defineProps({
     canResetPassword: Boolean,
@@ -36,6 +37,14 @@ const submit = () => {
         </div>
 
         <form @submit.prevent="submit" class="login_block">
+
+            <div class="mb-4">
+                <Link href="/">
+                    <BreezeApplicationLogo/>
+                </Link>
+            </div>
+
+
             <div>
                 <BreezeLabel for="email" value="Email" />
                 <BreezeInput id="email" type="email" class="mt-1 block w-full" v-model="form.email" required autofocus autocomplete="username" />
