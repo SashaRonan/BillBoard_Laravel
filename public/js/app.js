@@ -20826,6 +20826,55 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Products/MyProduct.vue?vue&type=script&setup=true&lang=js":
+/*!***********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Products/MyProduct.vue?vue&type=script&setup=true&lang=js ***!
+  \***********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  __name: 'MyProduct',
+  props: {
+    data: Object
+  },
+  setup: function setup(__props, _ref) {
+    var __expose = _ref.expose;
+    __expose();
+    var editProductId = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(null);
+    var changeEditProductId = function changeEditProductId(id) {
+      editProductId.value = id;
+    };
+    var isEdit = function isEdit(id) {
+      return editProductId.value === id;
+    };
+    var __returned__ = {
+      get editProductId() {
+        return editProductId;
+      },
+      set editProductId(v) {
+        editProductId = v;
+      },
+      changeEditProductId: changeEditProductId,
+      isEdit: isEdit,
+      ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref
+    };
+    Object.defineProperty(__returned__, '__isScriptSetup', {
+      enumerable: false,
+      value: true
+    });
+    return __returned__;
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Products/Product.vue?vue&type=script&setup=true&lang=js":
 /*!*********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Products/Product.vue?vue&type=script&setup=true&lang=js ***!
@@ -21625,6 +21674,23 @@ __webpack_require__.r(__webpack_exports__);
       var parent = event.target.closest('.record');
       title.value = 'Новый заголовок: ' + parent.dataset.id;
     };
+
+    // export default {
+    //     data() {
+    //         return {
+    //             productsData: Object,
+    //              title: ref('Заголовок')
+    //         }
+    //     },
+    //
+    //     methods: {
+    //         clicked () {
+    //             let parent = event.target.closest('.record');
+    //             this.title.value = 'Новый заголовок: ' + parent.dataset.id;
+    //         }
+    //     }
+    // }
+
     var __returned__ = {
       props: props,
       title: title,
@@ -21659,8 +21725,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _Layouts_Authenticated_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Layouts/Authenticated.vue */ "./resources/js/Layouts/Authenticated.vue");
 /* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
-/* harmony import */ var _Components_Products_Product_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Components/Products/Product.vue */ "./resources/js/Components/Products/Product.vue");
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var _Components_Products_MyProduct_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Components/Products/MyProduct.vue */ "./resources/js/Components/Products/MyProduct.vue");
+Object(function webpackMissingModule() { var e = new Error("Cannot find module '@/Components/Products/ProductEdit.vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
 
 
 
@@ -21675,15 +21743,8 @@ __webpack_require__.r(__webpack_exports__);
     var __expose = _ref.expose;
     __expose();
     var props = __props;
-    var title = (0,vue__WEBPACK_IMPORTED_MODULE_3__.ref)('Выбран товар № ');
-    var clicked = function clicked(event) {
-      var parent = event.target.closest('.record');
-      title.value = 'Выбран товар № ' + parent.dataset.id;
-    };
     var __returned__ = {
       props: props,
-      title: title,
-      clicked: clicked,
       BreezeAuthenticatedLayout: _Layouts_Authenticated_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
       get Link() {
         return _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.Link;
@@ -21691,8 +21752,9 @@ __webpack_require__.r(__webpack_exports__);
       get Head() {
         return _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.Head;
       },
-      Product: _Components_Products_Product_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-      ref: vue__WEBPACK_IMPORTED_MODULE_3__.ref
+      MyProduct: _Components_Products_MyProduct_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+      ProductEdit: Object(function webpackMissingModule() { var e = new Error("Cannot find module '@/Components/Products/ProductEdit.vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()),
+      ref: vue__WEBPACK_IMPORTED_MODULE_4__.ref
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -21997,6 +22059,144 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     _: 3 /* FORWARDED */
   }, 8 /* PROPS */, ["href"]);
+}
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Products/MyProduct.vue?vue&type=template&id=e1c4f7ba":
+/*!****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Products/MyProduct.vue?vue&type=template&id=e1c4f7ba ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+var _hoisted_1 = {
+  "class": "content_product_add"
+};
+var _hoisted_2 = {
+  "class": "product_block_add"
+};
+var _hoisted_3 = {
+  "class": "product_img-box"
+};
+var _hoisted_4 = {
+  "class": "product_img"
+};
+var _hoisted_5 = ["src"];
+var _hoisted_6 = {
+  "class": "product_right_block"
+};
+var _hoisted_7 = {
+  "class": "product_top_block"
+};
+var _hoisted_8 = {
+  "class": "product_description-box_add"
+};
+var _hoisted_9 = {
+  "class": "product_name-description-box"
+};
+var _hoisted_10 = {
+  "class": "product_name"
+};
+var _hoisted_11 = {
+  "class": "product_description"
+};
+var _hoisted_12 = {
+  "class": "product_price"
+};
+var _hoisted_13 = {
+  "class": "product_bottom_block"
+};
+var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  "class": "product_button_my_ads"
+}, "Удалить", -1 /* HOISTED */);
+var _hoisted_15 = {
+  "class": "content_product_add"
+};
+var _hoisted_16 = {
+  "class": "product_block_add"
+};
+var _hoisted_17 = {
+  "class": "product_img-box"
+};
+var _hoisted_18 = {
+  "class": "product_img"
+};
+var _hoisted_19 = ["src"];
+var _hoisted_20 = ["for"];
+var _hoisted_21 = ["id"];
+var _hoisted_22 = {
+  "class": "product_right_block"
+};
+var _hoisted_23 = {
+  "class": "product_top_block"
+};
+var _hoisted_24 = {
+  "class": "product_description-box_add"
+};
+var _hoisted_25 = {
+  "class": "edit_description_box"
+};
+var _hoisted_26 = ["value"];
+var _hoisted_27 = ["value"];
+var _hoisted_28 = ["value"];
+var _hoisted_29 = {
+  "class": "edit_product_bottom_block"
+};
+var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  "class": "edit_button"
+}, "Удалить", -1 /* HOISTED */);
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)($setup.isEdit($props.data.id) ? 'hidden' : '')
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+    src: $props.data.img,
+    "class": "upload_img_file",
+    alt: "img"
+  }, null, 8 /* PROPS */, _hoisted_5)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.data.product_name), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.data.description), 1 /* TEXT */)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.data.price) + " р.", 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    "class": "product_button_my_ads",
+    onClick: _cache[0] || (_cache[0] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
+      return $setup.changeEditProductId($props.data.id);
+    }, ["prevent"]))
+  }, "Изменить "), _hoisted_14])])])])], 2 /* CLASS */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)($setup.isEdit($props.data.id) ? '' : 'hidden')
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+    "class": "upload_img_file",
+    src: $props.data.img,
+    alt: "img"
+  }, null, 8 /* PROPS */, _hoisted_19)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "class": "change_img",
+    "for": 'product_change_' + $props.data.id
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Загрузить"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "class": "upload_button_input",
+    type: "file",
+    id: 'product_change_' + $props.data.id,
+    accept: "image/*"
+  }, null, 8 /* PROPS */, _hoisted_21)], 8 /* PROPS */, _hoisted_20)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_24, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_25, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "class": "edit_productName",
+    type: "text",
+    value: $props.data.product_name
+  }, null, 8 /* PROPS */, _hoisted_26), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
+    "class": "edit_description",
+    cols: "50",
+    rows: "5",
+    value: $props.data.description
+  }, "\n\n                            ", 8 /* PROPS */, _hoisted_27)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "class": "edit_price",
+    type: "text",
+    value: $props.data.price
+  }, null, 8 /* PROPS */, _hoisted_28)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    "class": "edit_button",
+    onClick: _cache[1] || (_cache[1] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
+      return $setup.changeEditProductId(null);
+    }, ["prevent"]))
+  }, "Сохранить"), _hoisted_30])])])])], 2 /* CLASS */)], 64 /* STABLE_FRAGMENT */);
 }
 
 /***/ }),
@@ -23176,48 +23376,7 @@ var _hoisted_5 = /*#__PURE__*/_withScopeId(function () {
     "class": "product_button_text"
   }, "Добавить", -1 /* HOISTED */);
 });
-var _hoisted_6 = ["data-id"];
-var _hoisted_7 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "content_product_add",
-    id: "product_20"
-  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "product_block_add"
-  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "product_img-box"
-  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "product_img"
-  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-    id: "img_20",
-    "class": "upload_img_file",
-    src: "img/products/%D1%8D%D0%BA%D1%88%D0%BE%D0%BD%D0%B8%D0%B9%20%D0%BA%D0%B0%D0%BC%D0%B5%D1%80%D0%B0.jpg"
-  })])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "product_right_block"
-  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "product_top_block"
-  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "product_description-box_add"
-  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "product_name-description-box"
-  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
-    "class": "product_name",
-    id: "productName_20"
-  }, " Экшн-камера Aceline DualScreen"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-    "class": "product_description",
-    id: "description_20"
-  }, "Экшн-видеокамера Aceline DualScreen 4K порадует своего обладателя наличием 2-дюймового экрана, при помощи которого у вас появится возможность просматривать сделанные видео.")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "product_price",
-    id: "price_20"
-  }, "3000 р.")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "product_bottom_block"
-  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    "class": "product_button_my_ads",
-    id: "edit_20"
-  }, "Изменить"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    "class": "product_button_my_ads",
-    id: "del_20"
-  }, "Удалить")])])])], -1 /* HOISTED */);
-});
+var _hoisted_6 = ["id"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Head"], {
     title: "Мои товары"
@@ -23226,7 +23385,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return [_hoisted_1];
     }),
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.title), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" TODO:: Вынести кнопку в отдельный компонент"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" TODO:: Вынести кнопку в отдельный компонент"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
         "class": "product_button_add",
         href: _ctx.route('products.create')
       }, {
@@ -23237,13 +23396,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, 8 /* PROPS */, ["href"])])]), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.productsData, function (product) {
         return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
           key: product.id,
-          "data-id": product.id,
-          "class": "record"
-        }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Product"], {
-          data: product,
-          onClick: $setup.clicked
+          "class": "content_product_add",
+          id: 'product_' + product.id
+        }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["MyProduct"], {
+          data: product
+        }, null, 8 /* PROPS */, ["data"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ProductEdit"], {
+          data: product
         }, null, 8 /* PROPS */, ["data"])], 8 /* PROPS */, _hoisted_6);
-      }), 128 /* KEYED_FRAGMENT */)), _hoisted_7];
+      }), 128 /* KEYED_FRAGMENT */))];
     }),
     _: 1 /* STABLE */
   })], 64 /* STABLE_FRAGMENT */);
@@ -49267,6 +49427,34 @@ if (false) {}
 
 /***/ }),
 
+/***/ "./resources/js/Components/Products/MyProduct.vue":
+/*!********************************************************!*\
+  !*** ./resources/js/Components/Products/MyProduct.vue ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _MyProduct_vue_vue_type_template_id_e1c4f7ba__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MyProduct.vue?vue&type=template&id=e1c4f7ba */ "./resources/js/Components/Products/MyProduct.vue?vue&type=template&id=e1c4f7ba");
+/* harmony import */ var _MyProduct_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MyProduct.vue?vue&type=script&setup=true&lang=js */ "./resources/js/Components/Products/MyProduct.vue?vue&type=script&setup=true&lang=js");
+/* harmony import */ var _node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+const __exports__ = /*#__PURE__*/(0,_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_MyProduct_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_MyProduct_vue_vue_type_template_id_e1c4f7ba__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Components/Products/MyProduct.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
 /***/ "./resources/js/Components/Products/Product.vue":
 /*!******************************************************!*\
   !*** ./resources/js/Components/Products/Product.vue ***!
@@ -49840,6 +50028,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Components/Products/MyProduct.vue?vue&type=script&setup=true&lang=js":
+/*!*******************************************************************************************!*\
+  !*** ./resources/js/Components/Products/MyProduct.vue?vue&type=script&setup=true&lang=js ***!
+  \*******************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_MyProduct_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_MyProduct_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./MyProduct.vue?vue&type=script&setup=true&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Products/MyProduct.vue?vue&type=script&setup=true&lang=js");
+ 
+
+/***/ }),
+
 /***/ "./resources/js/Components/Products/Product.vue?vue&type=script&setup=true&lang=js":
 /*!*****************************************************************************************!*\
   !*** ./resources/js/Components/Products/Product.vue?vue&type=script&setup=true&lang=js ***!
@@ -50204,6 +50408,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_NavLink_vue_vue_type_template_id_337232c2__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_NavLink_vue_vue_type_template_id_337232c2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./NavLink.vue?vue&type=template&id=337232c2 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/NavLink.vue?vue&type=template&id=337232c2");
+
+
+/***/ }),
+
+/***/ "./resources/js/Components/Products/MyProduct.vue?vue&type=template&id=e1c4f7ba":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/Components/Products/MyProduct.vue?vue&type=template&id=e1c4f7ba ***!
+  \**************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_MyProduct_vue_vue_type_template_id_e1c4f7ba__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_MyProduct_vue_vue_type_template_id_e1c4f7ba__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./MyProduct.vue?vue&type=template&id=e1c4f7ba */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Products/MyProduct.vue?vue&type=template&id=e1c4f7ba");
 
 
 /***/ }),

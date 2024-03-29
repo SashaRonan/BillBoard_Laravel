@@ -3,19 +3,16 @@
 import BreezeAuthenticatedLayout from '@/Layouts/Authenticated.vue';
 import {Link} from '@inertiajs/inertia-vue3';
 import {Head} from "@inertiajs/inertia-vue3";
-import Product from '@/Components/Products/Product.vue';
+
+import MyProduct from "@/Components/Products/MyProduct.vue";
+import ProductEdit from "@/Components/Products/ProductEdit.vue";
 import {ref} from 'vue';
 
 
 const props = defineProps({
     productsData: Object,
-
 });
-const title = ref('Выбран товар № ');
-const clicked = function (event) {
-    let parent = event.target.closest('.record');
-    title.value = 'Выбран товар № ' + parent.dataset.id;
-};
+
 </script>
 
 <template>
@@ -27,9 +24,6 @@ const clicked = function (event) {
                 Список всех товаров
             </h2>
         </template>
-        <div>
-            {{ title }}
-        </div>
 
         <div class="content_add_button">  <!-- TODO:: Вынести кнопку в отдельный компонент-->
             <div class="button_add-box">
@@ -47,36 +41,15 @@ const clicked = function (event) {
         </div>
 
 
-        <div v-for="product in productsData" :key="product.id" :data-id="product.id" class="record">
-            <Product :data="product" @click="clicked"></Product>
-        </div>
-
-
-        <div class="content_product_add" id="product_20">
-            <div class="product_block_add">
-                <div class="product_img-box">
-                    <div class="product_img"><img id="img_20" class="upload_img_file"
-                                                  src="img/products/%D1%8D%D0%BA%D1%88%D0%BE%D0%BD%D0%B8%D0%B9%20%D0%BA%D0%B0%D0%BC%D0%B5%D1%80%D0%B0.jpg">
-                    </div>
-                </div>
-                <div class="product_right_block">
-                    <div class="product_top_block">
-                        <div class="product_description-box_add">
-                            <div class="product_name-description-box"><h1 class="product_name" id="productName_20">
-                                Экшн-камера Aceline DualScreen</h1>
-                                <p class="product_description" id="description_20">Экшн-видеокамера Aceline DualScreen
-                                    4K порадует своего обладателя наличием 2-дюймового экрана, при помощи которого у вас
-                                    появится возможность просматривать сделанные видео.</p></div>
-                        </div>
-                        <div class="product_price" id="price_20">3000 р.</div>
-                    </div>
-                    <div class="product_bottom_block">
-                        <button class="product_button_my_ads" id="edit_20">Изменить</button>
-                        <button class="product_button_my_ads" id="del_20">Удалить</button>
-                    </div>
-                </div>
+        <template v-for="product in productsData" :key="product.id" :data-id="product.id" class="record">
+            <div class="content_product_add" :id="'product_'+ product.id">
+                <MyProduct :data="product"></MyProduct>
+                <ProductEdit :data="product"></ProductEdit>
             </div>
-        </div>
+
+
+        </template>
+
 
     </BreezeAuthenticatedLayout>
 

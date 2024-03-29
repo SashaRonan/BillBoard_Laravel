@@ -15,14 +15,30 @@ const clicked = function (event) {
     title.value = 'Новый заголовок: ' + parent.dataset.id;
 };
 
+// export default {
+//     data() {
+//         return {
+//             productsData: Object,
+//              title: ref('Заголовок')
+//         }
+//     },
+//
+//     methods: {
+//         clicked () {
+//             let parent = event.target.closest('.record');
+//             this.title.value = 'Новый заголовок: ' + parent.dataset.id;
+//         }
+//     }
+// }
+
+
+
 </script>
 
 <template>
     <Head title="Список товаров"/>
 
     <body>
-
-
 
     <BreezeAuthenticatedLayout>
         <template #header>

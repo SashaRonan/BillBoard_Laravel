@@ -20,6 +20,11 @@ class ProductController extends Controller
      */
     public function index()
     {
+//        $sql = DB::table('products as p')
+//            ->select('p.id', 'p.product_name', 'p.description', 'p.price', 'p.img', 'u.name', 'u.phone')
+//            ->leftJoin('users as u', 'p.user_id', '=', 'u.id')
+//            ->get();
+//        dd($sql);
         return Inertia::render("Products/Index", [
             'productsData' => DB::table('products as p')
                 ->select('p.id', 'p.product_name', 'p.description', 'p.price', 'p.img', 'u.name', 'u.phone')
@@ -79,7 +84,7 @@ class ProductController extends Controller
         ON products.user_id = users.id
         WHERE users.id = ' . $userID;
 
-//        dd(DB::select($sql));
+
         return Inertia::render("Products/Show", [
             'productsData' => DB::select($sql)],
         );
