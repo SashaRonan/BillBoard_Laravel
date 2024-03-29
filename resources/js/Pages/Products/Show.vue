@@ -5,13 +5,12 @@ import {Link} from '@inertiajs/inertia-vue3';
 import {Head} from "@inertiajs/inertia-vue3";
 
 import MyProduct from "@/Components/Products/MyProduct.vue";
-import ProductEdit from "@/Components/Products/ProductEdit.vue";
-import {ref} from 'vue';
-
 
 const props = defineProps({
     productsData: Object,
 });
+
+
 
 </script>
 
@@ -44,7 +43,6 @@ const props = defineProps({
         <template v-for="product in productsData" :key="product.id" :data-id="product.id" class="record">
             <div class="content_product_add" :id="'product_'+ product.id">
                 <MyProduct :data="product"></MyProduct>
-                <ProductEdit :data="product"></ProductEdit>
             </div>
 
 

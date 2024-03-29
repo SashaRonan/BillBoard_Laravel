@@ -186,8 +186,8 @@ body {
 
 .content_product_add {
     max-width: 800px;
-    position: relative;
-    top: 50px;
+
+
     text-align: center;
     flex-direction: column;
     display: flex;

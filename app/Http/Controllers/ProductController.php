@@ -94,11 +94,12 @@ class ProductController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param \App\Models\Product $product
-     * @return \Illuminate\Http\Response
+     * @return bool
      */
     public function edit(Product $product)
     {
-        //
+
+
     }
 
     /**
@@ -106,11 +107,19 @@ class ProductController extends Controller
      *
      * @param Request $request
      * @param \App\Models\Product $product
-     * @return \Illuminate\Http\Response
+     * @return Product
      */
-    public function update(Request $request, Product $product)
+    public function update(Product $product)
     {
-        //
+        $data = request()->validate([
+            'product_name' => 'required|string',
+            'description' => 'required|string',
+            'price' => 'required|integer',
+
+        ]);
+
+        $product->update($data);
+        return $product;
     }
 
     /**
